@@ -5,21 +5,21 @@ import MemoList from '../components/MemoList';
 import Circlebutton from '../elements/Circlebutton';
 
 class MemoListScreen extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <MemoList />
-                <Circlebutton>+</Circlebutton>
-            </View>
-        );
-    }
+  render() {
+    return (
+      <View style={styles.container}>
+        <MemoList />
+        <Circlebutton>+</Circlebutton>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        width: '100%',
-    },
+  container: {
+    flex:1,
+    width: '100%',
+  },
 });
 
 export default MemoListScreen;
