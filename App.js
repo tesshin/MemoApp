@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import MemoDetailScreen from './src/screens/MemoEditScreen';
+import MemoDetailScreen from './src/screens/SignupScreen';
 import Appbar from './src/components/Appbar';
 
 
