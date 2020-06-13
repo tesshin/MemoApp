@@ -2,12 +2,17 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import firebase from 'firebase';
+
 import MemoListScreen from './src/screens/MemoListScreen';
 import MemoEditScreen from './src/screens/MemoEditScreen';
 import MemoDetailScreen from './src/screens/MemoDetailScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SignupScreen from './src/screens/SignupScreen';
+import MemoCreateScreen from './src/screens/MemoCreateScreen';
 import ENV from './env.json';
+
+// eslint-disable-next-line
+require("firebase/firestore");
 
 const firebaseConfig = {
   apiKey:            ENV.FIREBASE_API_KEY,
@@ -25,10 +30,11 @@ const App = createStackNavigator({
   Signup:     { screen: SignupScreen },
   Login:      { screen: LoginScreen },
   Home:       { screen: MemoListScreen },
-  MemoDetail: { screen: MemoDetailScreen },
   MemoEdit:   { screen: MemoEditScreen },
+  MemoDetail: { screen: MemoDetailScreen },
+  MemoCreate: { screen: MemoCreateScreen },
 }, {
-  defaultNavigationOptions: { 
+  defaultNavigationOptions: {
     headerTitle: 'MEMOT',
     headerTintColor: '#fff',
     headerBackTitle: null,
