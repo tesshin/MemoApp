@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, useWindowDimensions, SnapshotViewIOS } from 'react-native';
-import firebase from 'firebase';
+import firebase, { database } from 'firebase';
 import MemoList from '../components/MemoList';
 import Circlebutton from '../elements/Circlebutton';
 //this.props.navigation.navigate( 'MemoEdit' );
@@ -18,13 +18,13 @@ class MemoListScreen extends React.Component {
       .then((snapshot)=>{
         const memoList = [];
         snapshot.forEach((doc) =>{
-          memoList.push(doc.data());
+          memoList.push({...doc.data(), key: doc.id});
         });
         this.setState({memoList});
       })
       .catch((error)=>{
         console.log(error);
-      })
+      });
   }
 
   handlePress() {
