@@ -10,7 +10,7 @@ const dateString = (date) => {
 class MemoList extends React.Component {
   renderMemo({ item }) {
     return (
-      <TouchableHighlight onPress={()=>{ this.props.navigation.navigate('MemoDetail'), { memo: item }; }}>
+      <TouchableHighlight onPress={()=>{ this.props.navigation.navigate('MemoDetail', { memo: item }); }}>
         <View style={styles.memoListItem}>
           <Text style={styles.memoTitle}>{item.body.substring(0,10)}</Text>
           <Text style={styles.memoDate}>{dateString(item.createdOn)}</Text>

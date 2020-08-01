@@ -37,7 +37,7 @@ class MemoDetailScreen extends React.Component {
           name="pencil"
           color="white" 
           style={styles.editButton} 
-          onPress={() => { this.props.navigation.navigate( 'MemoEdit' );}} 
+          onPress={() => { this.props.navigation.navigate( 'MemoEdit', { memo } );}} 
         />
       </View>
     );
